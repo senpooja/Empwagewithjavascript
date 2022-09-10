@@ -1,23 +1,25 @@
-const IS_PART_TIME=1;
-const IS_FULL_TIME=2;
-const PART_TIME_HOURS=4;
-const FULL_TIME_HOURS=8;
-const WAGE_PER_HOUR=20;
+//UC4 Adding SwitchCase method
 
-function getWorkingHours(empCheck)
-{
-      switch(empCheck)
-      {
-            case IS_PART_TIME:
-               return PART_TIME_HOURS;
-            case IS_FULL_TIME:
-               return FULL_TIME_HOURS;
+const present=1;
+const parttime=2;
+const salaryperhour=20;
+    var workinghours;
+let emp = Math.floor(Math.random() * 10) %  3;
+switch(emp){
+            case 1:
+                console.log("Employee is present");
+                workinghours=8;
+                break;
+            case 2:
+                console.log("Employee is parttimer");
+                workinghours=4;
+                break;
+            case 3:
+                console.log("Employee is absent");
+                workinghours=0;
+                break;
             default:
-               return 0;
-      }
+                console.log("condition doesent exist")
 }
-let empHrs = 0;
-let empCheck = Math.floor(Math.random()*10)%3;
-empHrs = getWorkingHours(empCheck);
-let empWage = empHrs * WAGE_PER_HOUR;
-console.log("Working Hours: " + empHrs + " Emp Wage: " + empWage);
+    const dailywage = (salaryperhour*workinghours);
+        console.log("salary will be ", dailywage);
